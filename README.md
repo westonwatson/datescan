@@ -2,7 +2,7 @@
 > Recognize and parse multiple date/time formats.
 
 
-####Example Usage
+#### Example Usage
 ```
 <?php
 
