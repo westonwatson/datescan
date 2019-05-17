@@ -1,0 +1,21 @@
+{
+  "name": "westonwatson/ContactSourceDateTimeHelper",
+  "description": "Recognize and parse multiple date/time formats.",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-0": {"westonwatson\\": "\\"}
+  },
+  "classmap": {
+
+  },
+  "authors": [
+    {
+      "name": "westonwatson",
+      "email": "wwatson@thedmsgrp.com"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "7.5"
+  }
+}
