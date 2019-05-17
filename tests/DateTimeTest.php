@@ -1,6 +1,6 @@
 <?php
 
-namespace westonwatson\ContactSourceDateTimeHelper;
+namespace westonwatson\datescan;
 
 use PHPUnit\Framework\TestCase;
 use DateTime;

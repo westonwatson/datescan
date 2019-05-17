@@ -1,6 +1,6 @@
 <?php
 
-namespace westonwatson\ContactSourceDateTimeHelper;
+namespace westonwatson\datescan;
 
 use DateTime;
 use http\Exception;
@@ -8,7 +8,7 @@ use http\Exception;
 class DateTimeHelper
 {
     const DUPLICATE_PATTERN_ERROR = "This Regular Expression Already Exists\n";
-    const EMPTY_DATE_INPUT_WARNING  = "No Input Date Given";
+    const EMPTY_DATE_INPUT_WARNING = "No Input Date Given";
 
     /**
      * @var DateTime
@@ -121,10 +121,10 @@ class DateTimeHelper
      */
     private function findPatternsAndParseDates()
     {
-        foreach($this->formatPatterns as $pattern => $format) {
+        foreach ($this->formatPatterns as $pattern => $format) {
             if (preg_match($pattern, $this->inputDate)) {
                 $parsed = $this->parseDate($format, $this->inputDate);
-                if ($parsed != FALSE) {
+                if ($parsed != false) {
                     array_push($this->dates, $parsed);
                 }
             }

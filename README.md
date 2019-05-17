@@ -1,8 +1,8 @@
 # Datescan
 > Recognize and parse multiple date/time formats.
 
-
 #### Example Usage
+
 ```
 <?php
 
@@ -21,3 +21,7 @@ class ExampleClass
     }
 }
 ```
+
+#### Introduction
+
+
