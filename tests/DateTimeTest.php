@@ -1,21 +1,17 @@
 <?php
 
-namespace westonwatson\datescan;
+namespace westonwatson\Datescan;
 
 use PHPUnit\Framework\TestCase;
 use DateTime;
 
-class DateTimeTest extends TestCase {
+/**
+ * Class DatescanTest
+ * @package westonwatson\datescan
+ */
+class DatescanTest extends TestCase {
 
     const TEST_GOOD_DATE = '2019-03-15';
-
-    /**
-     * setUp
-     */
-    protected function setUp():void
-    {
-        require_once ('./DateTimeHelper.php');
-    }
 
     /**
      * Test Array of Valid Dates
@@ -44,8 +40,8 @@ class DateTimeTest extends TestCase {
         $good_date_max = new DateTime('1 year ago');
 
         foreach ($good_dates as $good_date) {
-            $dateTimeHelper = new DateTimeHelper($good_date);
-            $real_date = $dateTimeHelper->getRealDateTime();
+            $datescan = new Datescan($good_date);
+            $real_date = $datescan->getRealDateTime();
             $this->assertLessThan($real_date, $good_date_max);
             $this->assertGreaterThan($real_date, $good_date_min);
         }
@@ -64,8 +60,8 @@ class DateTimeTest extends TestCase {
         ];
 
         foreach ($bad_dates as $bad_date) {
-            $dateTimeHelper = new DateTimeHelper($bad_date);
-            $this->assertNull($dateTimeHelper->getRealDateTime());
+            $datescan = new Datescan($bad_date);
+            $this->assertNull($datescan->getRealDateTime());
         }
     }
 
@@ -75,10 +71,10 @@ class DateTimeTest extends TestCase {
      */
     public function testCustomFormatPattern()
     {
-        $dateTimeHelper = new DateTimeHelper('-2018-');
-        $dateTimeHelper->addFormatPattern('-Y-', '/^-[0-9]{4}-$/');
+        $datescan = new Datescan('-2018-');
+        $datescan->addFormatPattern('-Y-', '/^-[0-9]{4}-$/');
 
-        $this->assertEquals((date_create_from_format('Y', '2018')), $dateTimeHelper->getRealDateTime());
+        $this->assertEquals((date_create_from_format('Y', '2018')), $datescan->getRealDateTime());
     }
 
     /**
@@ -89,8 +85,8 @@ class DateTimeTest extends TestCase {
     {
         $this->expectException(\Exception::class);
 
-        $dateTimeHelper = new DateTimeHelper(self::TEST_GOOD_DATE);
-        $dateTimeHelper->addFormatPattern('dmY', '/^(0[1-9]|[1-2][0-9]|3[0-1])(0[1-9]|1[0-2])[0-9]{4}$/');
+        $datescan = new Datescan(self::TEST_GOOD_DATE);
+        $datescan->addFormatPattern('dmY', '/^(0[1-9]|[1-2][0-9]|3[0-1])(0[1-9]|1[0-2])[0-9]{4}$/');
     }
 
     /**
@@ -101,10 +97,10 @@ class DateTimeTest extends TestCase {
     {
         $newClosestDate = new DateTime('2000-01-01');
 
-        $dateTimeHelper = new DateTimeHelper('01-01-01');
-        $dateTimeHelper->setClosestDate($newClosestDate);
+        $datescan = new Datescan('01-01-01');
+        $datescan->setClosestDate($newClosestDate);
 
-        $realDate = $dateTimeHelper->getRealDateTime();
+        $realDate = $datescan->getRealDateTime();
 
         $this->assertEquals('2001-01-01', $realDate->format('Y-m-d'));
     }

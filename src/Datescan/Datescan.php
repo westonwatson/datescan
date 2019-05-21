@@ -1,11 +1,14 @@
 <?php
 
-namespace westonwatson\datescan;
+namespace westonwatson\Datescan;
 
 use DateTime;
-use http\Exception;
 
-class DateTimeHelper
+/**
+ * Class Datescan
+ * @package westonwatson\datescan
+ */
+class Datescan
 {
     const DUPLICATE_PATTERN_ERROR = "This Regular Expression Already Exists\n";
     const EMPTY_DATE_INPUT_WARNING = "No Input Date Given";
@@ -68,7 +71,7 @@ class DateTimeHelper
     private $datesAndDiffs = [];
 
     /**
-     * DateTimeHelper constructor.
+     * Datescan constructor.
      * @param $inputDate
      * @throws \Exception
      */
@@ -168,7 +171,7 @@ class DateTimeHelper
      */
     private function parseDate(string $format, string $date)
     {
-        return date_create_from_format($format, $date);
+        return DateTime::createFromFormat($format, $date);
     }
 
     /**
@@ -177,6 +180,7 @@ class DateTimeHelper
      */
     private function dateDiff(DateTime $date)
     {
+
         return date_diff($this->closestDate, $date);
     }
 
