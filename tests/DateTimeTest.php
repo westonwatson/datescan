@@ -7,14 +7,17 @@ use DateTime;
 
 /**
  * Class DatescanTest
+ *
  * @package westonwatson\datescan
  */
-class DatescanTest extends TestCase {
+class DatescanTest extends TestCase
+{
 
     const TEST_GOOD_DATE = '2019-03-15';
 
     /**
      * Test Array of Valid Dates
+     *
      * @throws \Exception
      */
     public function testGoodDates()
@@ -40,7 +43,7 @@ class DatescanTest extends TestCase {
         $good_date_max = new DateTime('1 year ago');
 
         foreach ($good_dates as $good_date) {
-            $datescan = new Datescan($good_date);
+            $datescan  = new Datescan($good_date);
             $real_date = $datescan->getRealDateTime();
             $this->assertLessThan($real_date, $good_date_max);
             $this->assertGreaterThan($real_date, $good_date_min);
@@ -49,6 +52,7 @@ class DatescanTest extends TestCase {
 
     /**
      * Test Array of Invalid Dates
+     *
      * @throws \Exception
      */
     public function testBadDates()
@@ -67,6 +71,7 @@ class DatescanTest extends TestCase {
 
     /**
      * Test Custom Regex Pattern and Date Format
+     *
      * @throws \Exception
      */
     public function testCustomFormatPattern()
@@ -79,6 +84,7 @@ class DatescanTest extends TestCase {
 
     /**
      * Test Duplicate Regex Pattern Exception
+     *
      * @throws \Exception
      */
     public function testDuplicatePattern()
@@ -92,7 +98,6 @@ class DatescanTest extends TestCase {
     /**
      * Test Adding a Custom Closest Date
      */
-
     public function testCustomClosestDate()
     {
         $newClosestDate = new DateTime('2000-01-01');
