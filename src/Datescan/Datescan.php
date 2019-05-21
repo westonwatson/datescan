@@ -142,8 +142,7 @@ class Datescan
         $dateDiffs = [];
 
         foreach ($this->dates as $date) {
-            $dateDiff = $this->dateDiff($date);
-            if ($dateDiff != false) {
+            if ($dateDiff = $this->dateDiff($date)) {
                 $diff = abs(intval($dateDiff->format('%R%a')));
                 array_push($dateDiffs, $diff);
                 $this->datesAndDiffs[$diff] = $date;
@@ -180,8 +179,7 @@ class Datescan
      */
     private function dateDiff(DateTime $date)
     {
-
-        return date_diff($this->closestDate, $date);
+        return $this->closestDate->diff($date);
     }
 
 }
