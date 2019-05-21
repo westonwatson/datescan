@@ -6,11 +6,13 @@ use DateTime;
 
 /**
  * Class Datescan
+ *
  * @package westonwatson\datescan
  */
 class Datescan
 {
-    const DUPLICATE_PATTERN_ERROR = "This Regular Expression Already Exists\n";
+    const DUPLICATE_PATTERN_ERROR  = "This Regular Expression Already Exists\n";
+
     const EMPTY_DATE_INPUT_WARNING = "No Input Date Given";
 
     /**
@@ -72,7 +74,9 @@ class Datescan
 
     /**
      * Datescan constructor.
+     *
      * @param $inputDate
+     *
      * @throws \Exception
      */
     public function __construct($inputDate)
@@ -91,12 +95,14 @@ class Datescan
     /**
      * @param $dateFormat
      * @param $regexPattern
+     *
+     * @return mixed|array
      * @throws \Exception
      */
     public function addFormatPattern($dateFormat, $regexPattern)
     {
         if (array_key_exists($regexPattern, $this->formatPatterns)) {
-            throw new \Exception(self::DUPLICATE_PATTERN_ERROR . $regexPattern);
+            throw new \Exception(self::DUPLICATE_PATTERN_ERROR.$regexPattern);
         }
 
         return $this->formatPatterns[$regexPattern] = $dateFormat;
@@ -116,11 +122,12 @@ class Datescan
     public function getRealDateTime()
     {
         $this->findPatternsAndParseDates();
+
         return $this->findBestDate();
     }
 
     /**
-     * @param string $dateInput
+     * Parse dates with all matching Patterns/Formats
      */
     private function findPatternsAndParseDates()
     {
@@ -166,6 +173,7 @@ class Datescan
     /**
      * @param string $format
      * @param string $date
+     *
      * @return DateTime|false
      */
     private function parseDate(string $format, string $date)
@@ -175,6 +183,7 @@ class Datescan
 
     /**
      * @param DateTime $date
+     *
      * @return \DateInterval|false
      */
     private function dateDiff(DateTime $date)
