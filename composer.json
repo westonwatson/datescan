@@ -1,10 +1,16 @@
 {
-  "name": "westonwatson/datescan",
+  "name": "westonwatson/Datescan",
   "description": "Recognize and parse multiple date/time formats.",
   "type": "library",
   "license": "MIT",
   "autoload": {
-    "psr-0": {"westonwatson\\": "\\"}
+    "psr-0": {"": "src/"},
+    "psr-4": {"westonwatson\\Datescan\\":  "src/Datescan"}
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
   },
   "authors": [
     {
