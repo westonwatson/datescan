@@ -100,7 +100,7 @@ class ExampleClosestDateClass
         $datescan = new Datescan($date);
 
         //set custom closestDate
-        $datescan->setClosestDate(new DateTime('2009-01-01');
+        $datescan->setClosestDate(new DateTime('2009-01-01'));
 
         //get DateTime object
         $dateTimeObject = $datescan->getRealDateTime();
