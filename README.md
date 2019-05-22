@@ -1,5 +1,18 @@
-# Datescan ![Build Status](https://travis-ci.org/westonwatson/datescan.svg?branch=master)
+# Datescan 
 > Recognize and parse multiple date/time formats.
+
+![Build Status](https://travis-ci.org/westonwatson/datescan.svg?branch=master)
+![MIT License](https://img.shields.io/github/license/westonwatson/datescan.svg)
+![Release](https://img.shields.io/github/release/westonwatson/datescan.svg)
+![GitHub tag](https://img.shields.io/github/tag/westonwatson/datescan.svg)
+![Download Count](https://img.shields.io/github/downloads/westonwatson/datescan/total.svg)
+![GitHub contributors](https://img.shields.io/github/contributors/westonwatson/datescan.svg)
+![GitHub issues](https://img.shields.io/github/issues/westonwatson/datescan.svg)
+
+We needed a simple tool to help parse multiple date formats that came in over a myriad of sources into our central lead processing platform. Datescan was a way for us to recognize and parse the multitude of differing formats with a simple, consistent, and reliable tool.
+
+We're excited to bring Datescan to the public, and hope that more developers come on board and contribute to the project.
+
 
 #### Example Usage(s)
 ##### Basic Usage
@@ -121,3 +134,7 @@ Please, feel free to submit a pull request or open an issue on GitHub. Any and a
 
 ##### Contributors 
  * Weston Watson 
+
+![GitHub stars](https://img.shields.io/github/stars/westonwatson/datescan.svg?style=social&label=Star)
+![GitHub watchers](https://img.shields.io/github/watchers/westonwatson/datescan.svg?style=social&label=Watch)
+![GitHub forks](https://img.shields.io/github/forks/westonwatson/datescan.svg?style=social&label=Fork)
