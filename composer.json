@@ -1,5 +1,5 @@
 {
-  "name": "westonwatson/Datescan",
+  "name": "westonwatson/datescan",
   "description": "Recognize and parse multiple date/time formats.",
   "type": "library",
   "license": "MIT",
