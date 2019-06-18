@@ -21,7 +21,7 @@ class Datescan
     private $closestDate;
 
     /**
-     * @var string
+     * @var
      */
     private $inputDate = '';
 
@@ -171,12 +171,12 @@ class Datescan
     }
 
     /**
-     * @param string $format
-     * @param string $date
+     * @param $format
+     * @param $date
      *
      * @return DateTime|false
      */
-    private function parseDate(string $format, string $date)
+    private function parseDate($format, $date)
     {
         return DateTime::createFromFormat($format, $date);
     }
