@@ -3,6 +3,7 @@
   "description": "Recognize and parse multiple date/time formats.",
   "type": "library",
   "license": "MIT",
+  "version": "1.0.2",
   "autoload": {
     "psr-0": {"": "src/"},
     "psr-4": {"westonwatson\\Datescan\\":  "src/Datescan"}
