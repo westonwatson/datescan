@@ -13,8 +13,6 @@ class Datescan
 {
     const DUPLICATE_PATTERN_ERROR  = "This Regular Expression Already Exists\n";
 
-    const EMPTY_DATE_INPUT_WARNING = "No Input Date Given";
-
     /**
      * @var DateTime
      */
@@ -86,7 +84,6 @@ class Datescan
         if (!empty($inputDate) || strlen($inputDate) > 0) {
             $this->inputDate = $inputDate;
         } else {
-            trigger_error(self::EMPTY_DATE_INPUT_WARNING, E_USER_WARNING);
             $this->inputDate = null;
         }
 
